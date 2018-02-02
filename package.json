@@ -1,7 +1,7 @@
 {
   "name": "@picostate/react",
   "version": "0.0.2",
-  "description": "420byte state management for React.",
+  "description": "600 byte state management for React.",
   "source": "index.js",
   "module": "dist/picostate-react.es.js",
   "main": "dist/picostate-react.js",

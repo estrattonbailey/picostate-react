@@ -1,5 +1,5 @@
 # @picostate/react
-400 byte state management for React.
+600 byte state management for React using [picostate](https://github.com/estrattonbailey/picostate).
 
 ## Install
 ```
