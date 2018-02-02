@@ -1,0 +1,39 @@
+{
+  "name": "@picostate/react",
+  "version": "0.0.1",
+  "description": "420byte state management for React.",
+  "source": "index.js",
+  "module": "dist/picostate-react.es.js",
+  "main": "dist/picostate-react.js",
+  "umd:main": "dist/picostate-react.umd.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "microbundle build",
+    "watch": "microbundle watch",
+    "publish": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/estrattonbailey/picostate-react.git"
+  },
+  "keywords": [
+    "model update view",
+    "state",
+    "state management"
+  ],
+  "author": "estrattonbailey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/estrattonbailey/picostate-react/issues"
+  },
+  "homepage": "https://github.com/estrattonbailey/picostate-react#readme",
+  "devDependencies": {
+    "microbundle": "^0.4.3"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0"
+  }
+}
