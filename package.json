@@ -35,5 +35,8 @@
   "peerDependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.2.0"
+  },
+  "dependencies": {
+    "picostate": "^1.0.0"
   }
 }
