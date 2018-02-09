@@ -8,7 +8,7 @@ export function mapStateToProps (map) {
         <Component {...Object.assign(
           {},
           props,
-          map(picostate.state),
+          map(picostate.state, props),
           { hydrate: picostate.hydrate }
         )} />
       )

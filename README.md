@@ -15,7 +15,7 @@ const store = createStore({
   count: 0
 })
 
-const Counter = connect(state => ({
+const Counter = connect((state, props) => ({
   count: state.count
 }))(props => (
   <div>
