@@ -9,15 +9,32 @@ npm i @picostate/react --save
 ## Usage
 ```javascript
 import createStore from 'picostate'
-import { Provider, connect } from '@picostate/react'
+import { Provider, connect, createAction } from '@picostate/react'
 
 const store = createStore({
   count: 0
 })
 
-const Counter = connect((state, props) => ({
-  count: state.count
-}))(props => (
+const getData = createAction(store => {
+  return args => {
+    return getData(args).then(data => {
+      store.hydrate({ data })
+    })
+  }
+})
+
+const actions = {
+  getData
+}
+
+const Counter = connect(
+  (state, props) => ({
+    count: state.count
+  }),
+  (actions, props) => ({
+    getData: actions.getData
+  })
+)(props => (
   <div>
     <h1>The count is {props.count}</h1>
 
@@ -30,7 +47,7 @@ const Counter = connect((state, props) => ({
 ))
 
 render((
-  <Provider store={store}>
+  <Provider store={store} actions={actions}>
     <Counter />
   </Provider>
 ), document.body)
