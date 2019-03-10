@@ -15,16 +15,30 @@ const store = createStore({
   count: 0
 })
 
-const getData = createAction(store => {
-  return args => {
-    return getData(args).then(data => {
-      store.hydrate({ data })
+const renewLogin = createAction((store, actions) => {
+  return id => {
+    return renewAccessToken(id).then(token => {
+      store.hydrate({ token })
+      return token
     })
   }
 })
 
+const getUserAccount = createAction((store, actions) => {
+  return id => {
+    return actions.renewLogin(id)
+      .then(token => {
+        return getUserData(token).then(account => {
+          store.hydrate({ account })
+          return account
+        })
+      })
+  }
+})
+
 const actions = {
-  getData
+  renewLogin,
+  getUserAccount
 }
 
 const Counter = connect(
@@ -32,7 +46,7 @@ const Counter = connect(
     count: state.count
   }),
   (actions, props) => ({
-    getData: actions.getData
+    getUserAccount: actions.getUserAccount
   })
 )(props => (
   <div>
