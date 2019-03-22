@@ -11,8 +11,7 @@
   ],
   "scripts": {
     "build": "microbundle build --jsx React.createElement",
-    "watch": "microbundle watch --jsx React.createElement",
-    "publish": "npm publish --access public"
+    "watch": "microbundle watch --jsx React.createElement"
   },
   "repository": {
     "type": "git",
@@ -30,11 +29,10 @@
   },
   "homepage": "https://github.com/estrattonbailey/picostate-react#readme",
   "devDependencies": {
-    "microbundle": "^0.4.3"
+    "microbundle": "^0.11.0"
   },
-  "peerDependencies": {
+  "dependencies": {
     "picostate": "^1.0.0",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0"
+    "react": "^16.8.4"
   }
 }

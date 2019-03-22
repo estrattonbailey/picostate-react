@@ -1,23 +1,19 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { Consumer } from './Context.js'
 
 export function mapStateToProps (map) {
   return function wrapComponentWithState (Component) {
-    function Connect (props, { picostate }) {
-      return (
-        <Component {...Object.assign(
-          {},
-          props,
-          map(picostate.state, props),
-          { hydrate: picostate.hydrate }
-        )} />
-      )
-    }
-
-    Connect.contextTypes = {
-      picostate: PropTypes.object.isRequired
-    }
-
-    return Connect
+    return props => (
+      <Consumer>
+        {({ picostate }) => (
+          <Component {...Object.assign(
+            {},
+            props,
+            map(picostate.state, props),
+            { hydrate: picostate.hydrate }
+          )} />
+        )}
+      </Consumer>
+    )
   }
 }

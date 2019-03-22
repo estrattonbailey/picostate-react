@@ -1,6 +1,8 @@
 # @picostate/react
 600 byte state management for React using [picostate](https://github.com/estrattonbailey/picostate).
 
+> v2 brings support for React 16's context API
+
 ## Install
 ```
 npm i @picostate/react --save
@@ -36,4 +38,5 @@ render((
 ), document.body)
 ```
 
-MIT
+## license
+MIT License © [Eric Bailey](https://estrattonbailey.com)
