@@ -60,7 +60,7 @@ render((
 
 ### Install
 ```
-npm i @picostate/react --save
+npm i @picostate/react@next --save
 ```
 
 # Usage
