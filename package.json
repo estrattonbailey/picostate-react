@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "microbundle build --jsx React.createElement",
-    "watch": "microbundle watch --jsx React.createElement",
+    "watch": "microbundle watch --jsx React.createElement --compress=false",
     "test": "ava test.js"
   },
   "repository": {

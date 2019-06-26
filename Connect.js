@@ -1,7 +1,12 @@
 import React from 'react'
 import { Consumer } from './Context.js'
 
-export function mapStateToProps (mapStateToProps, actions) {
+export function connect (mapStateToProps, actions) {
+  if (typeof mapStateToProps === 'object') {
+    actions = mapStateToProps
+    mapStateToProps = undefined
+  }
+
   return function wrapComponentWithState (Component) {
     return props => (
       <Consumer>

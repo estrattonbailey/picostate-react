@@ -1,2 +1,3 @@
 export { Picostate } from './Provider.js'
-export { mapStateToProps as connect } from './Connect.js'
+export { connect } from './Connect.js'
+export { usePicostate } from './Hook.js'
