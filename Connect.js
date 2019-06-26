@@ -5,12 +5,12 @@ export function mapStateToProps (map) {
   return function wrapComponentWithState (Component) {
     return props => (
       <Consumer>
-        {({ picostate }) => (
+        {({ store }) => (
           <Component {...Object.assign(
             {},
             props,
-            map(picostate.state, props),
-            { hydrate: picostate.hydrate }
+            map(store.state, props),
+            { hydrate: store.hydrate }
           )} />
         )}
       </Consumer>

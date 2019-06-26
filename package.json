@@ -11,7 +11,9 @@
   ],
   "scripts": {
     "build": "microbundle build --jsx React.createElement",
-    "watch": "microbundle watch --jsx React.createElement"
+    "watch": "microbundle watch --jsx React.createElement",
+    "test": "ava test.js",
+    "postbuild": "npm run test"
   },
   "repository": {
     "type": "git",
@@ -29,10 +31,24 @@
   },
   "homepage": "https://github.com/estrattonbailey/picostate-react#readme",
   "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "ava": "^2.1.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "microbundle": "^0.11.0"
   },
   "dependencies": {
-    "picostate": "^1.0.0",
-    "react": "^16.8.4"
+    "picostate": "^2.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "ava": {
+    "babel": {
+      "testOptions": {
+        "presets": [
+          "@babel/preset-react"
+        ]
+      }
+    }
   }
 }

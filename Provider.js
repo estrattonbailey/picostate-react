@@ -9,17 +9,15 @@ export class Provider extends React.Component {
       throw new Error('@picostate/react was not provided with a picostate store')
     }
 
-    this.store = props.store
-    this.state = this.store.state
-    this.store.listen(this.setState.bind(this))
+    props.store.listen(this.setState.bind(this))
   }
 
   render () {
-    const { children } = this.props
+    const { store, children } = this.props
 
     return (
-      <ContextProvider value={{ picostate: this.store }}>
-        {children.pop ? children[0] : children}
+      <ContextProvider value={{ store }}>
+        {children}
       </ContextProvider>
     )
   }
