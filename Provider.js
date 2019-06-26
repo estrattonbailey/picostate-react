@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider as ContextProvider } from './Context.js'
 
-export class Provider extends React.Component {
+export class Picostate extends React.Component {
   constructor (props) {
     super(props)
 

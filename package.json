@@ -12,8 +12,7 @@
   "scripts": {
     "build": "microbundle build --jsx React.createElement",
     "watch": "microbundle watch --jsx React.createElement",
-    "test": "ava test.js",
-    "postbuild": "npm run test"
+    "test": "ava test.js"
   },
   "repository": {
     "type": "git",
@@ -35,6 +34,7 @@
     "ava": "^2.1.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "jsdom": "^15.1.1",
     "microbundle": "^0.11.0"
   },
   "dependencies": {

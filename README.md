@@ -1,41 +1,45 @@
 # @picostate/react
-600 byte state management for React using [picostate](https://github.com/estrattonbailey/picostate).
+[picostate](https://github.com/estrattonbailey/picostate) adapter for React.
+**500 bytes gzipped.**
 
-> v2 brings support for React 16's context API
+### Features
+- familiar API
+- fully thunk-able
+- all the benefits of
+  [picostate](https://github.com/estrattonbailey/picostate#features)
 
-## Install
-```
-npm i @picostate/react --save
-```
-
-## Usage
 ```javascript
+import React from 'react'
+import { render } from 'react-dom'
 import createStore from 'picostate'
-import { Provider, connect } from '@picostate/react'
+import { Picostate, connect } from '@picostate/react'
 
-const store = createStore({
-  count: 0
-})
+const store = createStore({ count: 0 })
 
-const Counter = connect((state, props) => ({
-  count: state.count
-}))(props => (
+const Counter = connect(
+  state => ({ count: state.count }),
+  {
+    increment (hydrate) {
+      hydrate(state => ({ count: state.count + 1 }))()
+    }
+  }
+)(props => (
   <div>
     <h1>The count is {props.count}</h1>
-
-    <button onClick={e => {
-      props.hydrate(state => ({
-        count: state.count + 1
-      }))()
-    }}>Increment</button>
+    <button onClick={props.increment}>Increment</button>
   </div>
 ))
 
 render((
-  <Provider store={store}>
+  <Picostate store={store}>
     <Counter />
-  </Provider>
-), document.body)
+  </Picostate>
+), document.getElementById('root'))
+```
+
+### Install
+```
+npm i @picostate/react --save
 ```
 
 ## license
