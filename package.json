@@ -1,6 +1,6 @@
 {
   "name": "@picostate/react",
-  "version": "3.0.0-1",
+  "version": "3.0.0",
   "description": "600 byte picostate adapter for React",
   "source": "index.js",
   "module": "dist/picostate-react.es.js",
