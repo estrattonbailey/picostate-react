@@ -34,7 +34,7 @@
     "ava": "^2.1.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "jsdom": "^15.1.1",
+    "jsdom": "^16.5.0",
     "microbundle": "^0.11.0"
   },
   "dependencies": {
